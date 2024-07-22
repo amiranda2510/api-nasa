@@ -12,4 +12,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+
+  resources :lists
+  post 'lists/:id/add_img', to: 'lists#add_img'
+  delete 'lists/:id/images/:image_id', to: 'lists#delete_img'
 end
